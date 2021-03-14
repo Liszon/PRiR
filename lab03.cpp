@@ -106,6 +106,30 @@ void doPotegi(short T[], int poczatek, int koniec)
     }
 }
 
+void algorytm(short T[], short T2[], int poczatek, int koniec)
+{
+  string k = Kolor::nastepny(), r = Kolor::reset(), info = "";
+    
+    for(int i = poczatek; i< koniec; i++){
+      
+      info = k + to_string(T[i]) + r + "\n";
+      cout << info;
+
+      if(i==0)
+      {
+        T2[i]=(T[i]+T[i+1])/2;
+      }
+      else if(i==koniec)
+      {
+        T2[i]=(T[i]+T[i-1])/2;
+      }
+      else
+      {
+        T2[i]=(T[i-1]+T[i]+T[i+1])/3;
+      }
+    }
+}
+
 
 void zadanie_1(unsigned int rozmiarTablicy){
   
@@ -135,7 +159,7 @@ void zadanie_1(unsigned int rozmiarTablicy){
 
 void zadanie_2(unsigned int rozmiarTablicy){
   
-  cout << endl << "Zadanie 1" << endl << endl;
+  cout << endl << "Zadanie 2" << endl << endl;
 
   static short * TAB; //Tablica
   TAB = new short[rozmiarTablicy];
@@ -143,7 +167,6 @@ void zadanie_2(unsigned int rozmiarTablicy){
   wyswietlTablice(TAB,rozmiarTablicy);
 
   short wynik1, wynik2;
-  unsigned int polowa = rozmiarTablicy /2;
 
   thread watek1(sumujCoDrugi,TAB,0,rozmiarTablicy,ref(wynik1));
   thread watek2(sumujCoDrugi,TAB,1,rozmiarTablicy,ref(wynik2));
@@ -169,7 +192,6 @@ void zadanie_3(unsigned int rozmiarTablicy){
   wyswietlTablice(TAB,rozmiarTablicy);
 
   short wynik1, wynik2;
-  unsigned int polowa = rozmiarTablicy /2;
 
   thread watek1(sumujDodatnieLubUjemne,TAB,true,rozmiarTablicy,ref(wynik1));
   thread watek2(sumujDodatnieLubUjemne,TAB,false,rozmiarTablicy,ref(wynik2));
@@ -194,7 +216,6 @@ void zadanie_4(unsigned int rozmiarTablicy){
   wypelnijLosowymi(TAB,rozmiarTablicy);
   wyswietlTablice(TAB,rozmiarTablicy);
 
-  short wynik1, wynik2;
   unsigned int polowa = rozmiarTablicy /2;
 
   thread watek1(doPotegi,TAB,0,polowa);
@@ -207,5 +228,33 @@ void zadanie_4(unsigned int rozmiarTablicy){
       wyswietlTablice(TAB,rozmiarTablicy);
 
     delete [] TAB;
+  
+}
+
+void zadanie_5(unsigned int rozmiarTablicy){
+  
+  cout << endl << "Zadanie 5" << endl << endl;
+
+  static short * TAB; //Tablica
+  TAB = new short[rozmiarTablicy];
+  wypelnijLosowymi(TAB,rozmiarTablicy);
+  wyswietlTablice(TAB,rozmiarTablicy);
+
+  static short * TAB2; //Tablica
+  TAB2 = new short[rozmiarTablicy];
+
+  unsigned int polowa = rozmiarTablicy /2;
+
+  thread watek1(algorytm,TAB,TAB2,0,polowa);
+  thread watek2(algorytm,TAB,TAB2,polowa,rozmiarTablicy);
+
+  watek1.join();
+  watek2.join();
+
+  cout<< endl << "Wyniki pracy wątków" << endl;
+      wyswietlTablice(TAB2,rozmiarTablicy);
+
+    delete [] TAB;
+    delete [] TAB2;
   
 }

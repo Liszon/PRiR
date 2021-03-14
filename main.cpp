@@ -24,10 +24,10 @@ int main() {
   */
 
   //lab03
-  //zadanie_1(21);
-  //zadanie_2(21);
-  //zadanie_3(21);
+  zadanie_1(21);
+  zadanie_2(21);
+  zadanie_3(21);
   zadanie_4(21);
-  //zadanie_5(21);
+  zadanie_5(21);
   return 0;
 }
