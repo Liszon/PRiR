@@ -1,7 +1,8 @@
 #include "lab02.h"
 #include "kolory.h"
-#include <iostream>
 #include <thread>
+#include <iostream>
+
 #include <chrono>
 #include <cmath>
 
