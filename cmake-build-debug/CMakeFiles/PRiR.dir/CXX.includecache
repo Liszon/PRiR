@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Studia/PRIR/Laboratorium/PRiR/lab01.h
+
+D:/Studia/PRIR/Laboratorium/PRiR/lab02.h
+
+D:/Studia/PRIR/Laboratorium/PRiR/lab03.h
+
+D:/Studia/PRIR/Laboratorium/PRiR/lab04.h
+
+D:/Studia/PRIR/Laboratorium/PRiR/lab05.h
+
+D:/Studia/PRIR/Laboratorium/PRiR/lab06.h
+
+D:/Studia/PRIR/Laboratorium/PRiR/lab07.h
+
+D:/Studia/PRIR/Laboratorium/PRiR/main.cpp
+lab01.h
+D:/Studia/PRIR/Laboratorium/PRiR/lab01.h
+lab02.h
+D:/Studia/PRIR/Laboratorium/PRiR/lab02.h
+lab03.h
+D:/Studia/PRIR/Laboratorium/PRiR/lab03.h
+lab04.h
+D:/Studia/PRIR/Laboratorium/PRiR/lab04.h
+lab05.h
+D:/Studia/PRIR/Laboratorium/PRiR/lab05.h
+lab06.h
+D:/Studia/PRIR/Laboratorium/PRiR/lab06.h
+lab07.h
+D:/Studia/PRIR/Laboratorium/PRiR/lab07.h
+iostream
+-
+

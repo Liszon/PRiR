@@ -1,0 +1,3 @@
+D:/Studia/PRIR/Laboratorium/PRiR/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Studia/PRIR/Laboratorium/PRiR/cmake-build-debug/CMakeFiles/PRiR.dir
+D:/Studia/PRIR/Laboratorium/PRiR/cmake-build-debug/CMakeFiles/rebuild_cache.dir
