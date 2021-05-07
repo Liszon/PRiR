@@ -5,6 +5,7 @@
 #include <iostream>
 #include <set>
 #include <vector>
+#include "semafor.h"
 
 using namespace std;
 
@@ -15,12 +16,14 @@ random_device rd8;
 minstd_rand generator8(rd8());
 uniform_int_distribution<int> zakres8(1, 3);
 
+mutex mutexKonsoli;
+
 class Hangar;
 class Samolot;
 
 class Lotnisko{
 public:
-    Lotnisko(Hangar &h) : pasWolny(true), hangar(h) {
+    Lotnisko(Hangar &h) : pasWolny(true), hangar(h), semaforPasStartowy(1) {
 
     }
 
@@ -32,6 +35,7 @@ public:
 private:
     bool pasWolny;
     Hangar &hangar;
+    Semafor semaforPasStartowy;
 };
 
 class Samolot{
@@ -62,13 +66,14 @@ private:
 
 class Hangar{
 public:
-    Hangar(int n) : rozmiarHangaru(n) {
+    Hangar(int n) : rozmiarHangaru(n), semaforHangar(n){
     }
 
     void parkuj(Samolot &s) {
         if (samoloty.size() < rozmiarHangaru)
         {
             samoloty.insert(s.nazwa);
+            cout<<"Samolot "+s.nazwa+" wjezdza do hangaru"<<endl;
         } else {
             cout<<"Hangar pelny"<<endl;
         }
@@ -78,6 +83,8 @@ public:
         if (samoloty.count(s.nazwa) == 1)
         {
             samoloty.erase(s.nazwa);
+            semaforHangar.sygnalizuj();
+            cout<<"Samolot "+s.nazwa+" opuszcza hangar"<<endl;
         } else {
                 cout<<"W hangarze nie ma tego samolotu"<<endl;
         }
@@ -86,9 +93,11 @@ public:
 private:
     unsigned rozmiarHangaru;
     set<string> samoloty;
+    Semafor semaforHangar;
 };
 
 void Lotnisko::laduj(Samolot &s) {
+    semaforPasStartowy.czekaj();
     if (pasWolny)
     {
         pasWolny = false;
@@ -98,6 +107,7 @@ void Lotnisko::laduj(Samolot &s) {
         info = "Samolot "+s.nazwa+" wyladowal";
         cout<<info<<endl;
         pasWolny= true;
+        semaforPasStartowy.sygnalizuj();
     } else {
         cout<<"Zderzenie na pasie startowym"<<endl;
     }
@@ -112,6 +122,7 @@ void Lotnisko::oposcHangar(Samolot &s) {
 }
 
 void Lotnisko::startuj(Samolot &s) {
+    semaforPasStartowy.czekaj();
     if (pasWolny)
     {
         pasWolny = false;
@@ -121,6 +132,7 @@ void Lotnisko::startuj(Samolot &s) {
         info = "Samolot "+s.nazwa+" wystartowal";
         cout<<info<<endl;
         pasWolny = true;
+        semaforPasStartowy.sygnalizuj();
     } else {
         cout<<"Zderzenie na pasie startowym"<<endl;
     }
