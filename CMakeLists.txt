@@ -24,4 +24,6 @@ add_executable(PRiR
         lab07.h
         main.cpp
         semafor.cpp
-        semafor.h)
+        semafor.h
+        lab08.cpp
+        lab08.h)

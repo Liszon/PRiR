@@ -357,6 +357,33 @@ lab07.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PRiR.dir\build.make CMakeFiles/PRiR.dir/lab07.cpp.s
 .PHONY : lab07.cpp.s
 
+lab08.obj: lab08.cpp.obj
+
+.PHONY : lab08.obj
+
+# target to build an object file
+lab08.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PRiR.dir\build.make CMakeFiles/PRiR.dir/lab08.cpp.obj
+.PHONY : lab08.cpp.obj
+
+lab08.i: lab08.cpp.i
+
+.PHONY : lab08.i
+
+# target to preprocess a source file
+lab08.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PRiR.dir\build.make CMakeFiles/PRiR.dir/lab08.cpp.i
+.PHONY : lab08.cpp.i
+
+lab08.s: lab08.cpp.s
+
+.PHONY : lab08.s
+
+# target to generate assembly for a file
+lab08.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PRiR.dir\build.make CMakeFiles/PRiR.dir/lab08.cpp.s
+.PHONY : lab08.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -444,6 +471,9 @@ help:
 	@echo ... lab07.obj
 	@echo ... lab07.i
 	@echo ... lab07.s
+	@echo ... lab08.obj
+	@echo ... lab08.i
+	@echo ... lab08.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

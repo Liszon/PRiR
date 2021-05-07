@@ -130,6 +130,12 @@
 		<Unit filename="D:/Studia/PRIR/Laboratorium/PRiR/lab07.h">
 			<Option target="PRiR"/>
 		</Unit>
+		<Unit filename="D:/Studia/PRIR/Laboratorium/PRiR/lab08.cpp">
+			<Option target="PRiR"/>
+		</Unit>
+		<Unit filename="D:/Studia/PRIR/Laboratorium/PRiR/lab08.h">
+			<Option target="PRiR"/>
+		</Unit>
 		<Unit filename="D:/Studia/PRIR/Laboratorium/PRiR/main.cpp">
 			<Option target="PRiR"/>
 		</Unit>

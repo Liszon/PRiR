@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/PRiR.dir/lab05.cpp.obj"
   "CMakeFiles/PRiR.dir/lab06.cpp.obj"
   "CMakeFiles/PRiR.dir/lab07.cpp.obj"
+  "CMakeFiles/PRiR.dir/lab08.cpp.obj"
   "CMakeFiles/PRiR.dir/main.cpp.obj"
   "CMakeFiles/PRiR.dir/semafor.cpp.obj"
   "PRiR.exe"
