@@ -202,7 +202,7 @@ void lab05_cwiczenie_3_2(){
 }
 
 //zadanie 3 -------------------------------------------------------------
-/*
+template <typename TypDanych>
 class MonitorZad3
 {
   private:
@@ -242,4 +242,3 @@ class MonitorZad3
       return dane;
     }
 };
-*/

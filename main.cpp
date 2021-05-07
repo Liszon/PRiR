@@ -4,6 +4,8 @@
 #include "lab04.h"
 #include "lab05.h"
 #include "lab06.h"
+#include "lab07.h"
+#include "lab08.h"
 #include <iostream>
 using namespace std;
 
@@ -51,6 +53,12 @@ int main() {
   */
 
   //lab06
-  lab06();
+  //lab06();
+
+  //lab07
+  //lab07();
+
+  //lab08
+  lab08();
   return 0;
 }

@@ -36,3 +36,12 @@ bool Semafor::proboj_czekac()
         return false;
     }
 }
+
+Semafor::Semafor(int _count) : licznikZasobow(_count) {
+
+}
+
+Semafor::Semafor(const Semafor &obj) : Semafor::Semafor(obj.licznikZasobow)
+{
+
+}

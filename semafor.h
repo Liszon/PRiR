@@ -16,6 +16,8 @@ public:
     void czekaj();  //zajmuje zasób (jeżeli nie ma wolnych to czeka na zwolnienie zasobu)
     bool proboj_czekac();   //proboje zająć zasob, true - udało się | false - wszystkie zasoby zajęte
     int wartosc() const;    //zwraca bierzącą wartośc licznika
+    
+    Semafor(const Semafor &obj);
 
 private:
     int licznikZasobow; //licznik dostępnych zasobów
